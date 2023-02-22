@@ -8,4 +8,28 @@
     <button data-reflex="click->Example#reset">Reset</button>
     #data-reflex makes multiple hit
   </div>
+  
+  <br/>
+
+  <div>
+    Last Refresh:
+    <b>
+      <mark id="time"><%= Time.now %></mark>
+    </b>
+  </div>
+
+  <div>
+    Clicked
+    <b>
+      <mark id="count"><%= session[:count] || 0 %></mark>
+    </b>
+    times
+  </div>
+
+  <br/>
+
+  <progress value="<%= session[:count] %>" max="10"></progress>
+
+  <div id="reload"></div>
 </main>
+<div class="fireworks" style="position: fixed; bottom: 0; width: 100vw; height: 100vh; pointer-events: none;"></div>
